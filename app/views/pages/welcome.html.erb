@@ -13,10 +13,14 @@
                         <h3 class='welcome-msg'>Welcome to the culinary competition score sheet home page. This is where you can enter your account and see competitions.</h3>
                     </div>
                     <!-- link to Sign up page, should be accopanied with a log_in page --> 
-                    <%= link_to 'Sign up', '#', class: 'btn btn-default btn-primary btn-block btn-lg' %>
-                    <br/>
-                    <p class='text-center'>Already a user?</p>
-                    <%= link_to 'Log in', '#', class: 'btn btn-default btn-primary btn-block btn-lg' %>
+                    <% if current_user %>
+                        <%= link_to 'Dashboard', '#', class: 'btn btn-default btn-primary btn-block btn-lg' %>
+                    <% else %>
+                        <%= link_to 'Sign up', '/signup', class: 'btn btn-default btn-primary btn-block btn-lg' %>
+                        <br/> 
+                        <p class='text-center'>Already a user?</p>
+                        <%= link_to 'Log in', '/login', class: 'btn btn-default btn-primary btn-block btn-lg' %>
+                    <% end %>
                 </div>   
             </div>
         </div>
