@@ -25,19 +25,28 @@
 #header-msg {
     font-family:'Alegreya Sans', sans-serif;
     font-weight: 700;
+    font-size: 36px;
     color: white;
-    text-align: center;
-    padding-top: 0%;
-    margin-top: 0%;
+    text-align: right;
+    margin-left: 20px;
+    clear: right;
 }
 
-#navbar-items {
-    float: right;
+#navigation-area {
+    background-color: #4e4e4e;
+    
 }
 
-.nav-link {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #337AB7;
-    border-radius: 15%;
+.navigation-button {
+    margin: 10px;
+    color: #ffffff;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 400;
+}
+
+.greeter-text {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #ffffff;
 }
