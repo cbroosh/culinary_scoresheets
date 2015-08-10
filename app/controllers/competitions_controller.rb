@@ -1,6 +1,7 @@
 class CompetitionsController < ApplicationController
     def new
         @competition = Competition.new
+        3.times { @competition.judges.build }
     end
     
     def create
