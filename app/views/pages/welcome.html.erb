@@ -14,7 +14,7 @@
                     </div>
                     <!-- link to Sign up page, should be accopanied with a log_in page --> 
                     <% if current_user %>
-                        <%= link_to 'Dashboard', '#', class: 'btn btn-default btn-primary btn-block btn-lg' %>
+                        <%= link_to 'Create a Competition', new_competition_path, class: 'btn btn-default btn-primary btn-block btn-lg' %>
                     <% else %>
                         <%= link_to 'Sign up', '/signup', class: 'btn btn-default btn-primary btn-block btn-lg' %>
                         <br/> 
