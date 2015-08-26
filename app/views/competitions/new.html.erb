@@ -10,7 +10,13 @@
                     <div class="col-md-6 col-md-offset-3 text-cetner">
                         <h1>Create a new competition</h1>
                            <%= form_for(@competition) do |f| %>
-                           Judges:
+                           
+                            <div class="form-group">
+                                   <%= f.label :title %>
+                                   <%= f.text_field :title, :Placeholder => "Competition Title" %>
+                            </div>
+                           
+                           <h4>Judges:</h4>
                             <%= f.fields_for :judges do |judge_form| %>
                                 <div class="form-group">
                                    <%= judge_form.label :judge %>
@@ -18,17 +24,36 @@
                                 </div>
                             <% end %>
                            
-                           <%= link_to "Add more judges", "#", class: "btn btn-default" %>
+                           <%= link_to "Add more judges", "#", class: "btn btn-default" %> <!-- Remember to revisit this with JS -->
                            
-                           <div class="form-group">
-                               <%= f.label :team %>
-                               <%= f.text_field :team, :Placeholder => "Team" %>
-                           </div>
+                           <br/>
+                           <br/>
+                           
+                           <h4>Teams:</h4>
+                           <%= f.fields_for :teams do |team_form| %>
+                               <div class="form-group">
+                                   <%= team_form.label :team %>
+                                   <%= team_form.text_field :name, :Placeholder => "Team" %>
+                               </div>
+                           <% end %>
+                           
+                           <%= link_to "Add more teams", "#", class: "btn btn-default" %> <!-- Remember to revisit this with JS -->
+                           
+                           <br/>
+                           <br/>
+                           
                            <div class="form-group">
                                <%= f.label :start_date %>
                                <%= f.date_field(:start_date)%>
                            </div>
+                           
+                           <br/>
+                           <br/>
+                           
+                           <%= f.submit "Create my competition", class: 'btn btn-default' %>
                            <% end %>
+                           
+                         
                     </div>
                 </div>
             </div>
