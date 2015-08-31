@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813181255) do
+ActiveRecord::Schema.define(version: 20150831171608) do
 
   create_table "competitions", force: :cascade do |t|
     t.string   "judge"
@@ -28,6 +28,21 @@ ActiveRecord::Schema.define(version: 20150813181255) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "competition_id"
+  end
+
+  create_table "scoresheets", force: :cascade do |t|
+    t.integer  "app_serve_method"
+    t.integer  "app_portion_nutrition"
+    t.integer  "app_creativity_compatibility"
+    t.integer  "app_flavor_texture_doneness"
+    t.string   "app_comments"
+    t.integer  "entree_serve_method"
+    t.integer  "entree_portion_nutrition"
+    t.integer  "entree_creativity_compatibility"
+    t.integer  "entree_flavor_texture_doneness"
+    t.string   "entree_comments"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "teams", force: :cascade do |t|

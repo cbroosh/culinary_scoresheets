@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  resources :scoresheets  
   resources :competitions
   delete 'logout' => 'sessions#destroy'
   post 'login' => 'sessions#create'

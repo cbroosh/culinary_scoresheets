@@ -28,7 +28,7 @@
                     <ul class="list-unstyled">
                         <%= @competition.teams.find_each do |t| %>
                             <li><%= t.name %></li>
-                            <li><%= link_to "Submit a scoresheet.", '#' %></p></li>
+                            <li><%= link_to "Submit a scoresheet.", new_scoresheet_path %></li>
                         <% end %>
                     </ul>
                 </div>
