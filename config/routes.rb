@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :scoresheets  
-  resources :competitions
+   
+  resources :competitions do
+    resources :scoresheets 
+  end
   delete 'logout' => 'sessions#destroy'
   post 'login' => 'sessions#create'
   get '/login' => 'sessions#new'

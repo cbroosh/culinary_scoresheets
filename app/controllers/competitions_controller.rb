@@ -26,6 +26,6 @@ class CompetitionsController < ApplicationController
     
     private
     def competition_params
-       params.require(:competition).permit(:start_date, :competition_id, :title, :judges_attributes => [:competition_id, :name], :teams_attributes => [:competition_id, :name]) 
+       params.require(:competition).permit(:start_date, :competition_id, :title, :judges_attributes => [:competition_id, :name], :teams_attributes => [:competition_id, :name], :scoresheets_attributes => [:competition_id]) 
     end
 end

@@ -5,6 +5,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:400,100,700,100italic' rel='stylesheet' type='text/css'>
+  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <nav class="navbar navbar-default" id="navigation-area">
@@ -39,6 +40,8 @@
 </nav>
 </head>
 <body>
+      <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
