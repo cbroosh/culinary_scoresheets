@@ -2,6 +2,7 @@ class ScoresheetsController < ApplicationController
     before_filter :find_competition
     
     def new 
+       @scoresheet = Scoresheet.new(params[:id])
        
     end
     
@@ -12,6 +13,6 @@ class ScoresheetsController < ApplicationController
     end
     
     def find_competition
-       @competition = Competition.find_by(params[:competiton__id]) 
+       @competition = Competition.find(params[:competition_id]) 
     end
 end

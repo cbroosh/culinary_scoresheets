@@ -6,16 +6,125 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h1>Placeholder</h1>
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select Judge <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        
-                        <li>Judge</li>
-                        
-                      </ul>
+                    <h1><%= @competition.title %></h1>
+                    
+                    
+                    <div id="form-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3">
+                                    <%= form_for [@competition,@scoresheet] do |f| %>
+                                    
+                                    <div class="form-group">
+                                        <h4>Select Judge</h4>
+                                        <select class="form-control">
+                                            <%= @competition.judges.find_each do |j| %>
+                                                <option><%= j.name %></option>
+                                            <% end %>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>Select Team</h4>
+                                        <select class="form-control">
+                                            <%= @competition.teams.find_each do |t| %>
+                                                <option><%= t.name %></option>
+                                            <% end %>
+                                        </select>
+                                    </div>
+                                    
+                                    <h4>Appetizer Serving Methods and Presentation:</h4>
+                                    <p>(Fresh cooked and colorful, easy to eat, closel placed items for maintaining temeprature, hot/cold serving plate, stylistic but practical)</p>
+                                       <%= f.fields_for :scoresheets do |app_form| %>
+                                           <div class="form-group">
+                                               <%= app_form.label :score %>
+                                               <%= app_form.number_field(:app_serve_method, in: 1..5, step: 0.5, :Placeholder => "0 - 5") %>
+                                           </div>
+                                       <% end %>
+                                       
+                                    <h4>Appetizer Portion Size and Nutritional Balance:</h4>
+                                    <p>(Fresh cooked and colorful, easy to eat, closely placed items for maintaining temeprature, hot/cold serving plate, stylistic but practical)</p>
+                                       <%= f.fields_for :scoresheets do |app_form| %>
+                                           <div class="form-group">
+                                               <%= app_form.label :score %>
+                                               <%= app_form.number_field(:app_portion_nutrition, in: 1..5, step: 0.5, :Placeholder => "0 - 5") %>
+                                               
+                                           </div>
+                                       <% end %>
+                                   <h4>Appetizer Creativity, Menu and Ingredient Compatibility:</h4>
+                                    <p>(Do the recipe ingredients complement each other in color, flavor, and texture? Are the ingredients balanced in size and amounts?)</p>
+                                       <%= f.fields_for :scoresheets do |app_form| %>
+                                           <div class="form-group">
+                                               <%= app_form.label :score %>
+                                               <%= app_form.number_field( :app_creativity_compatibility, in: 1..15, step: 0.5, :Placeholder => "0 - 15") %>
+                                           </div>
+                                       <% end %>
+                                           
+                                        <h4>Appetizer Flavor, Taste, Texture, and Doneness:</h4>
+                                        <p>(Do the major specified ingredients carry the dominant flavors? Do the components fit together? Are the temperatures correct?
+                                        Do the textures reflect the cooking technique? Is the sauce the correct flavor for the meat/fish and is it the correct consistency and smooth?)</p>
+                                           <%= f.fields_for :scoresheets do |app_form| %>
+                                               <div class="form-group">
+                                                   <%= app_form.label :score %>
+                                                   <%= app_form.number_field( :app_flavor_texture_doneness, in: 1..35, step: 0.5, :Placeholder => "0 - 35") %>
+                                               </div>
+                                           <% end %>
+                                       
+                                        <h4>Appetizer Comments:</h4>
+                                           <%= f.fields_for :scoresheets do |app_form| %>
+                                               <div class="form-group">
+                                                   <%= app_form.text_area :app_comments, size: "60x4", :Placeholder => "Type your comments here..." %>
+                                               </div>
+                                           <% end %>
+                                           
+                                        <h4>Entree Serving Methods and Presentation:</h4>
+                                        <p>(Fresh cooked and colorful, easy to eat, closel placed items for maintaining temeprature, hot/cold serving plate, stylistic but practical)</p>
+                                       <%= f.fields_for :scoresheets do |app_form| %>
+                                           <div class="form-group">
+                                               <%= app_form.label :score %>
+                                               <%= app_form.number_field( :entree_serve_method, in: 1..5, step: 0.5, :Placeholder => "0 - 5") %>
+                                           </div>
+                                       <% end %>
+                                       
+                                        <h4>Entree Portion Size and Nutritional Balance:</h4>
+                                        <p>(Fresh cooked and colorful, easy to eat, closely placed items for maintaining temeprature, hot/cold serving plate, stylistic but practical)</p>
+                                           <%= f.fields_for :scoresheets do |app_form| %>
+                                               <div class="form-group">
+                                                   <%= app_form.label :score %>
+                                                   <%= app_form.number_field(:entree_portion_nutrition, in: 1..5, step: 0.5, :Placeholder => "0 - 5") %>
+                                                   
+                                               </div>
+                                           <% end %>
+                                        <h4>Entree Creativity, Menu and Ingredient Cmompatibility:</h4>
+                                        <p>(Do the recipe ingredients complement each other in color, flavor, and texture? Are the ingredients balanced in size and amounts?)</p>
+                                           <%= f.fields_for :scoresheets do |app_form| %>
+                                               <div class="form-group">
+                                                   <%= app_form.label :score %>
+                                                   <%= app_form.number_field( :entree_creativity_compatibility, in: 1..15, step: 0.5, :Placeholder => "0 - 15") %>
+                                               </div>
+                                           <% end %>
+                                           
+                                        <h4>Entree Flavor, Taste, Texture, and Doneness:</h4>
+                                        <p>(Do the major specified ingredients carry the dominant flavors? Do the components fit together? Are the temperatures correct?
+                                        Do the textures reflect the cooking technique? Is the sauce the correct flavor for the meat/fish and is it the correct consistency and smooth?)</p>
+                                           <%= f.fields_for :scoresheets do |app_form| %>
+                                               <div class="form-group">
+                                                   <%= app_form.label :score %>
+                                                   <%= app_form.number_field( :entree_flavor_texture_doneness, in: 1..35, step: 0.5, :Placeholder => "0 - 35") %>
+                                               </div>
+                                           <% end %>
+                                       
+                                        <h4>Entree Comments:</h4>
+                                           <%= f.fields_for :scoresheets do |app_form| %>
+                                               <div class="form-group">
+                                                   <%= app_form.text_area :entree_comments, size: "60x4", :Placeholder => "Type your comments here..." %>
+                                               </div>
+                                           <% end %>
+                                           
+                                           <%= f.submit "Submit Scores!", class: "btn btn-default" %>
+                                        <% end %>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
