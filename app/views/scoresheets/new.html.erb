@@ -37,7 +37,7 @@
                                        <%= f.fields_for :scoresheets do |app_form| %>
                                            <div class="form-group">
                                                <%= app_form.label :score %>
-                                               <%= app_form.number_field(:app_serve_method, in: 1..5, step: 0.5, :Placeholder => "0 - 5") %>
+                                               <%= app_form.number_field(:app_serve_method, in: 0..5, step: 0.5, :Placeholder => "0 - 5") %>
                                            </div>
                                        <% end %>
                                        
@@ -46,7 +46,7 @@
                                        <%= f.fields_for :scoresheets do |app_form| %>
                                            <div class="form-group">
                                                <%= app_form.label :score %>
-                                               <%= app_form.number_field(:app_portion_nutrition, in: 1..5, step: 0.5, :Placeholder => "0 - 5") %>
+                                               <%= app_form.number_field(:app_portion_nutrition, in: 0..5, step: 0.5, :Placeholder => "0 - 5") %>
                                                
                                            </div>
                                        <% end %>
@@ -55,7 +55,7 @@
                                        <%= f.fields_for :scoresheets do |app_form| %>
                                            <div class="form-group">
                                                <%= app_form.label :score %>
-                                               <%= app_form.number_field( :app_creativity_compatibility, in: 1..15, step: 0.5, :Placeholder => "0 - 15") %>
+                                               <%= app_form.number_field( :app_creativity_compatibility, in: 0..15, step: 0.5, :Placeholder => "0 - 15") %>
                                            </div>
                                        <% end %>
                                            
@@ -65,7 +65,7 @@
                                            <%= f.fields_for :scoresheets do |app_form| %>
                                                <div class="form-group">
                                                    <%= app_form.label :score %>
-                                                   <%= app_form.number_field( :app_flavor_texture_doneness, in: 1..35, step: 0.5, :Placeholder => "0 - 35") %>
+                                                   <%= app_form.number_field( :app_flavor_texture_doneness, in: 0..35, step: 0.5, :Placeholder => "0 - 35") %>
                                                </div>
                                            <% end %>
                                        
@@ -81,7 +81,7 @@
                                        <%= f.fields_for :scoresheets do |app_form| %>
                                            <div class="form-group">
                                                <%= app_form.label :score %>
-                                               <%= app_form.number_field( :entree_serve_method, in: 1..5, step: 0.5, :Placeholder => "0 - 5") %>
+                                               <%= app_form.number_field( :entree_serve_method, in: 0..5, step: 0.5, :Placeholder => "0 - 5") %>
                                            </div>
                                        <% end %>
                                        
@@ -90,7 +90,7 @@
                                            <%= f.fields_for :scoresheets do |app_form| %>
                                                <div class="form-group">
                                                    <%= app_form.label :score %>
-                                                   <%= app_form.number_field(:entree_portion_nutrition, in: 1..5, step: 0.5, :Placeholder => "0 - 5") %>
+                                                   <%= app_form.number_field(:entree_portion_nutrition, in: 0..5, step: 0.5, :Placeholder => "0 - 5") %>
                                                    
                                                </div>
                                            <% end %>
@@ -99,7 +99,7 @@
                                            <%= f.fields_for :scoresheets do |app_form| %>
                                                <div class="form-group">
                                                    <%= app_form.label :score %>
-                                                   <%= app_form.number_field( :entree_creativity_compatibility, in: 1..15, step: 0.5, :Placeholder => "0 - 15") %>
+                                                   <%= app_form.number_field( :entree_creativity_compatibility, in: 0..15, step: 0.5, :Placeholder => "0 - 15") %>
                                                </div>
                                            <% end %>
                                            
@@ -109,7 +109,7 @@
                                            <%= f.fields_for :scoresheets do |app_form| %>
                                                <div class="form-group">
                                                    <%= app_form.label :score %>
-                                                   <%= app_form.number_field( :entree_flavor_texture_doneness, in: 1..35, step: 0.5, :Placeholder => "0 - 35") %>
+                                                   <%= app_form.number_field( :entree_flavor_texture_doneness, in: 0..35, step: 0.5, :Placeholder => "0 - 35") %>
                                                </div>
                                            <% end %>
                                        

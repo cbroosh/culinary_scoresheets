@@ -1,0 +1,10 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <% @competition.teams.find_each do |t| %>
+        <h4><%= t.name %></h4>
+        <% end %>
+    </body>
+</html>

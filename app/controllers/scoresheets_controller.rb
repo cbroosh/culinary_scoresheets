@@ -3,7 +3,18 @@ class ScoresheetsController < ApplicationController
     
     def new 
        @scoresheet = Scoresheet.new(params[:id])
-       
+    end
+    
+    def create
+        @scoresheet = Scoresheet.new(params[scoresheet_params])
+        if @scoresheet.save
+            flash[:success] = "Scores submitted"
+            redirect_to [@competition, @scoresheet] # Don't forget to go back and change this. It should route back to the 'new' page for judges. The show page is for Competition owners, same for index pages.
+        
+        else 
+            flash[:danger] = "Something went wrong"
+            redirect_to new_competition_scoresheet_path(@competition)
+        end
     end
     
     
