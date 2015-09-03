@@ -29,7 +29,6 @@
                         <%= @competition.teams.find_each do |t| %>
                             <li><%= t.name %></li>
                         <% end %>
-                        <li> <%= link_to "Submit a scoresheet.", new_competition_scoresheet_path(@competition, @scoresheet) %></li>
                     </ul>
                 </div>
             </div>
@@ -38,6 +37,7 @@
         <div class ="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
+                    <h3><%= link_to "Submit a scoresheet.", new_competition_scoresheet_path(@competition, @scoresheet) %></h3>
                     <h3><%= link_to "Back to competitions", competitions_path %></h3>
                 </div>
             </div>
