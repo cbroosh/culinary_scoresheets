@@ -3,8 +3,45 @@
         
     </head>
     <body>
-        <% @competition.teams.find_each do |t| %>
-        <h4><%= t.name %></h4>
-        <% end %>
+        <div class="container">
+            <div class="well">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                         <ul class="list-unstyled">
+                            <li><h4>Judge</h4></li>
+                            <li><%= @scoresheet.judge %></li>
+                            <li><h4>Team</h4></li>
+                            <li><%= @scoresheet.team %> </li>
+                            <h4>Appetizer Serving Methods and Presentation:</h4>
+                            <li><%= @scoresheet.app_serve_method %></li>
+                            <h4>Appetizer Portion Size and Nutritional Balance:</h4>
+                            <li><%= @scoresheet.app_portion_nutrition %></li>
+                            <h4>Appetizer Creativity, Menu and Ingredient Compatibility:</h4>
+                            <li><%= @scoresheet.app_creativity_compatibility %></li>
+                            <h4>Appetizer Flavor, Taste, Texture, and Doneness:</h4>
+                            <li><%= @scoresheet.app_flavor_texture_doneness %></li>
+                            <h4>Appetizer Comments:</h4>
+                            <li><%= @scoresheet.app_comments %></li>
+                            <h4>Entree Serving Methods and Presentation:</h4>
+                            <li><%= @scoresheet.entree_serve_method %></li>
+                            <h4>Entree Portion Size and Nutritional Balance:</h4>
+                            <li><%= @scoresheet.entree_portion_nutrition %></li>
+                            <h4>Entree Creativity, Menu and Ingredient Cmompatibility:</h4>
+                            <li><%= @scoresheet.entree_creativity_compatibility %></li>
+                            <h4>Entree Flavor, Taste, Texture, and Doneness:</h4>
+                            <li><%= @scoresheet.entree_flavor_texture_doneness %></li>
+                            <h4>Entree Comments:</h4>
+                            <li><%= @scoresheet.entree_comments %></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        
+        
+      
+        
+        
     </body>
 </html>
