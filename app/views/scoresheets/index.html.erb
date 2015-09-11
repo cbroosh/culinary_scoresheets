@@ -6,12 +6,12 @@
         <div class="container">
             <div class="row">
                 <div class-"col-md-6 col-md-offset-3">
-                    <% @competitions.each do |c| %>
+                    <% @scoresheets.each do |scoresheet| %>
                     <ul class="list-unstyled">
-                        <% if c %>
+                        <% if scoresheet %>
                             <li class="well row text-center">
                                 <div>
-                                    <%= link_to c.title, c %>
+                                    <%= link_to scoresheet.judge, competition_scoresheet_path(@competition, scoresheet) %>
                                 </div>
                             </li>
                         <% end %>

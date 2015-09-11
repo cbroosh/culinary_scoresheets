@@ -10,7 +10,6 @@ class ScoresheetsController < ApplicationController
         if @scoresheet.save
             flash[:success] = "Scores submitted"
             redirect_to [@competition, @scoresheet] # Don't forget to go back and change this. It should route back to the 'new' page for judges. The show page is for Competition owners, same for index pages.
-        
         else 
             flash[:danger] = "Something went wrong"
             redirect_to new_competition_scoresheet_path(@competition)
@@ -18,7 +17,18 @@ class ScoresheetsController < ApplicationController
     end
     
     def show
-       @scoresheet = Scoresheet.find(params[:id])
+       @scoresheet = Scoresheet.find( params[:id] )
+    end
+    
+    def destroy
+        @scoresheet = Scoresheet.find(params[:id])
+        @scoresheet.destroy
+        redirect_to @competition
+    end
+    
+    def index
+        @scoresheets = Scoresheet.all
+        @scoresheet = Scoresheet.find_by(params[:scoresheet_id])
     end
     
     

@@ -33,12 +33,13 @@
                             <h4>Entree Comments:</h4>
                             <li><%= @scoresheet.entree_comments %></li>
                         </ul>
+                        <h3><%= link_to "See Scoresheets", competition_scoresheets_path(@competition, @scoresheet) %></h3>
                     </div>
                 </div>
             </div>
         </div>
        
-        
+        <h3><%= link_to "See Scoresheets", competition_scoresheets_path(@competition, @scoresheet) %></h3>
         
       
         

@@ -27,7 +27,7 @@
         <% if current_user %>
           <ul class='nav navbar-right navbar-nav'> <!-- Need to make sure that this is inline with the header -->
             <p class="navbar-text greeter-text">Hello <%= current_user.first_name %>!</p>
-            <%= link_to "Log Out", 'logout', method: 'delete', class: 'navbar-btn btn btn-default navigation-button' %>
+            <%= link_to "Log Out", logout_path, method: 'delete', class: 'navbar-btn btn btn-default navigation-button' %>
           </ul>
         <% else %>
           <ul class='nav navbar-right navbar-nav'> <!-- Need to make sure that this is inline with the header -->
