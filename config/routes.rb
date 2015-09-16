@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
    
   resources :competitions do
-    resources :scoresheets 
+    resources :scoresheets
+    get 'teams/:id(.:format)' => 'teams#show', :as => 'team'
   end
   delete 'logout' => 'sessions#destroy'
   post 'login' => 'sessions#create'

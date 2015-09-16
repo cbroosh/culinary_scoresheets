@@ -27,7 +27,8 @@
                     <h3>Teams</h3>
                     <ul class="list-unstyled">
                         <%= @competition.teams.find_each do |t| %>
-                            <li><%= t.name %></li>
+                            <li><%= link_to t.name, competition_team_path(@competition, t) %></li>
+                            <li><%= @team_score %></li>
                         <% end %>
                     </ul>
                 </div>
