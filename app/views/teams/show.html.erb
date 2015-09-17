@@ -7,13 +7,8 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
                     <h1><%= @team.name %></h1>
-                    
-                    <% @scoresheets.where("team = ?", params[:id]).find_each do |t| %>
-                    <% end %>
-                    
+
                     <div class="well">
-                        
-                        
                         
                         <% if Scoresheet.where("team = ?", params[:id]).exists? %>
                             <h2>Appetizer Scores</h2>
@@ -36,7 +31,7 @@
                             <h4>Entree Flavor, Taste, Texture, and Doneness:</h4>
                             <%= entree_flavor_score = Scoresheet.where(team: params[:id]).average(:entree_flavor_texture_doneness) %>
                             <h2>Total Score</h2>
-                                <%= @team_score = app_serve_score + app_portion_score + app_flavor_score + app_creativity_score + entree_serve_score + entree_portion_score + entree_creativity_score + entree_flavor_score %>
+                                <%= team_score(@team).to_s %>
                         <% else %>
                             <h3>There's nothing to see here yet!</h3>
                         <% end %>

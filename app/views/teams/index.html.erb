@@ -1,0 +1,19 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="well col-md-6 col-md-offset-3">
+                    <ul class="list-unstyled"> 
+                        <% @teams.each do |t| %>
+                                <li><%= t.name + " - " + team_score(t).to_s %></li>
+                        <% end %>
+                    </ul>
+                    <h3><%= link_to "Back to Competition", competition_path(@competition, @scoresheet) %></h3>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
