@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910133327) do
+ActiveRecord::Schema.define(version: 20150924173128) do
 
   create_table "competitions", force: :cascade do |t|
     t.string   "judge"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20150910133327) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "role"
   end
 
 end
