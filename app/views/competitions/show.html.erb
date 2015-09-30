@@ -39,7 +39,9 @@
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4 text-center well">
                         <h3><%= link_to "Submit a scoresheet", new_competition_scoresheet_path(@competition, @scoresheet) %></h3>
-                        <h3><%= link_to "See Scoresheets", competition_scoresheets_path(@competition, @scoresheet) %></h3>
+                        <% if current_user && current_user.admin? %>
+                            <h3><%= link_to "See Scoresheets", competition_scoresheets_path(@competition, @scoresheet) %></h3>
+                        <% end %>
                         <h3><%= link_to "See Leaderboard", competition_teams_path(@competition, @scoresheet) %></h3>
                         <h3><%= link_to "Back to competitions", competitions_path %></h3>
                     </div>

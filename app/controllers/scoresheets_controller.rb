@@ -1,5 +1,6 @@
 class ScoresheetsController < ApplicationController
     before_filter :find_competition
+    before_filter :require_admin, only: [:show, :index]
     
     def new 
        @scoresheet = Scoresheet.new(params[:id])

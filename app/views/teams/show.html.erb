@@ -37,7 +37,9 @@
                         <% end %>
                         
                         <h3><%= link_to "Back to Competition", competition_path(@competition, @scoresheet) %></h3>
-                        <h3><%= link_to "See Scoresheets", competition_scoresheets_path(@competition, @scoresheet) %></h3>
+                        <% if current_user && current_user.admin? %>
+                            <h3><%= link_to "See Scoresheets", competition_scoresheets_path(@competition, @scoresheet) %></h3>
+                        <% end %>
                     </div>
                 </div>
             </div>
